@@ -1,4 +1,4 @@
-drop table reviews if exists;
+drop table if exists reviews;
 
 create table reviews (
 	id serial primary key,
@@ -6,5 +6,5 @@ create table reviews (
   name text not null,
   description text,
   user_date date not null,
-  image text,
+  image text
 );
