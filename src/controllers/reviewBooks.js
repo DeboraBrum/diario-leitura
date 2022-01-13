@@ -12,7 +12,7 @@ const getReviews = async (req, res) => {
 
 const createReview = async (req, res) => {
   try {
-    const { name, rate, description, user_date } = req.body;
+    const { name, rate, description, user_date, image } = req.body;
     await schemaCreateReview.validate(req.body);
     const review = await knex("reviews")
       .insert({
@@ -20,6 +20,7 @@ const createReview = async (req, res) => {
         rate,
         description,
         user_date,
+        image
       })
       .returning("*");
     if (!review) {
