@@ -1,3 +1,3 @@
 const app = require('./server');
 
-app.listen(process.env.SV_PORT || process.env.PORT);
+app.listen(process.env.PORT || process.env.SV_PORT);
